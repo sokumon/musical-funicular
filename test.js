@@ -22,7 +22,12 @@ if(url.searchParams.get("subject")!=null && url.searchParams.get("work") && url.
 }
 if ('showTrigger' in Notification.prototype) {
     /* Notification Triggers supported */
-    console.log("supproted")
+    console.log("supproted");
+    document.getElementById("Status").innerText="i can see"
+    navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        registrations[0].showNotification("HELLO",{    body: 'This notification was scheduled 30 seconds ago',
+        showTrigger: new TimestampTrigger(Date.now+ 30 * 1000)});
+    });
   }else{
       console.log("not supported")
   }
