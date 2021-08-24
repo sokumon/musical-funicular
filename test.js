@@ -33,19 +33,22 @@ if(url.searchParams.get("subject")!=null && url.searchParams.get("work") && url.
 //       console.log("not supported")
 //   }
 
-if('Notification' in window){
-    Notification.requestPermission().then(permit=>{
-        if(permit=="granted"){
-            navigator.serviceWorker.getRegistration().then(register=>{
-                if(register==null){
-                    console.log("will register a sw")
-                    navigator.serviceWorker.register('sw.js');
-                }else{
-                    navigator.serviceWorker.ready.then(event=>{
-                        console.log(event.showNotification('Hello',{body:"test"}))
-                    })
-                }
-            })
-        }
-    })
+function askMe()
+{
+    if('Notification' in window){
+        Notification.requestPermission().then(permit=>{
+            if(permit=="granted"){
+                navigator.serviceWorker.getRegistration().then(register=>{
+                    if(register==null){
+                        console.log("will register a sw")
+                        navigator.serviceWorker.register('sw.js');
+                    }else{
+                        navigator.serviceWorker.ready.then(event=>{
+                            console.log(event.showNotification('Hello',{body:"test"}))
+                        })
+                    }
+                })
+            }
+        })
+    }
 }
