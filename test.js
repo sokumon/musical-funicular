@@ -36,7 +36,7 @@ if(url.searchParams.get("subject")!=null && url.searchParams.get("work") && url.
     document.getElementById("Status").innerText="i can see"
   } else {
     // API not supported
-    document.getElementById("Status").innerText="i cant see"
+    document.getElementById("Status").innerText="i cant\ see"
   }
 
 
