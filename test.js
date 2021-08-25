@@ -44,7 +44,7 @@ function askMe()
                         navigator.serviceWorker.register('sw.js');
                     }else{
                         navigator.serviceWorker.ready.then(event=>{
-                            var notif=event.showNotification('Hello',{body:"test",actions:"haha"})
+                            var notif=event.showNotification('Hello',{body:"test"})
                             // event.onclick=console.log("hello")
                             .onclick = function(event) {
                                 event.preventDefault(); // prevent the browser from focusing the Notification's tab
