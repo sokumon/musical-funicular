@@ -18,6 +18,7 @@
 
 var url=new URL(window.location.href);
 if(url.searchParams.get("subject")!=null && url.searchParams.get("work") && url.searchParams.get("number")){
+    document.getElementById("instruct").innerText="Write and Submit them asap"
     document.getElementById("subject").innerText=url.searchParams.get("subject");
     document.getElementById("work").innerText=url.searchParams.get("work")+" "+url.searchParams.get("number");
 }
@@ -33,40 +34,34 @@ if(url.searchParams.get("subject")!=null && url.searchParams.get("work") && url.
 //       console.log("not supported")
 //   }
 
-// function askMe()
-// {
-//     if('Notification' in window){
-//         Notification.requestPermission().then(permit=>{
-//             if(permit=="granted"){
-//                 navigator.serviceWorker.getRegistration().then(register=>{
-//                     if(register==null){
-//                         console.log("will register a sw")
-//                         navigator.serviceWorker.register('sw.js');
-//                     }else{
-//                         navigator.serviceWorker.ready.then(event=>{
-//                             event.onclick = function(action){
-//                                 // prevent the browser from focusing the Notification's tab
-//                                console.log("su")
-//                                clients.openWindow("sokumon.github.io/form-ed");
-//                             }
-//                             var notif=event.showNotification('Hello',{body:"test"})
-//                             // event.onclick=console.log("hello")
+function askMe()
+{
+    if('Notification' in window){
+        Notification.requestPermission().then(permit=>{
+            if(permit=="granted"){
+                navigator.serviceWorker.getRegistration().then(register=>{
+                    if(register==null){
+                        console.log("will register a sw")
+                        navigator.serviceWorker.register('sw.js');
+                    }else{
+                        navigator.serviceWorker.ready.then(event=>{
+                            var notif=event.showNotification('Assigment 5 Submission',{body:""})
+                            // event.onclick=console.log("hello")
 
-//                         })
+                        })
                         
                         
-//                     }
-//                 })
-//             }
-//         })
-//     }
-// }
-
-function askMenow(){
-    motification=new Notification("HELLO",{body:"Im dying"});
-    motification.onclick = function(event) {
-     event.preventDefault(); // prevent the browser from focusing the Notification's tab
-     window.open('http://localhost/trial/notifiication/index.html?body=hahahaha');
-     window.open('https://sokumon.github.io/musical-funicular/index.html?subject=DSGT&work=assignment&number=5&');
+                    }
+                })
+            }
+        })
     }
 }
+
+// function askMenow(){
+//     motification=new Notification("HELLO",{body:"Im dying"});
+//     motification.onclick = function(event) {
+//      event.preventDefault(); // prevent the browser from focusing the Notification's tab
+//      window.open('https://sokumon.github.io/musical-funicular/index.html?subject=DSGT&work=assignment&number=5&');
+//     }
+// }
