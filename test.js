@@ -44,8 +44,15 @@ function askMe()
                         navigator.serviceWorker.register('sw.js');
                     }else{
                         navigator.serviceWorker.ready.then(event=>{
-                            console.log(event.showNotification('Hello',{body:"test"}))
+                            var notif=event.showNotification('Hello',{body:"test",actions:"haha"})
+                            // event.onclick=console.log("hello")
+                            .onclick = function(event) {
+                                event.preventDefault(); // prevent the browser from focusing the Notification's tab
+                                window.open('http://www.mozilla.org', '_blank');
+                              }
                         })
+                        
+                        
                     }
                 })
             }
