@@ -65,3 +65,8 @@ function askMe()
 //      window.open('https://sokumon.github.io/musical-funicular/index.html?subject=DSGT&work=assignment&number=5&');
 //     }
 // }
+// if ('Notification' in window){
+//     console.log("i can do it");
+// }else{
+//     console.log("no permsission");
+// }
