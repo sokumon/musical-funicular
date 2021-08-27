@@ -45,7 +45,12 @@ function askMe()
                         navigator.serviceWorker.register('sw.js');
                     }else{
                         navigator.serviceWorker.ready.then(event=>{
-                            var notif=event.showNotification('Assigment 5 Submission',{body:""})
+                            console.log(Date.now())
+                            var notif_display=new Date();
+                            notif_display.setMinutes( notif_display.getMinutes() + 15 );
+                            console.log(notif_display);
+                            event.showNotification('Next One will come in 15');
+                            var notif=event.showNotification('Assigment 5 Submission',{body:"",showTrigger:new TimestampTrigger(notif_display)});
                             // event.onclick=console.log("hello")
 
                         })
@@ -56,8 +61,9 @@ function askMe()
             }
         })
     }
-}
 
+}
+//
 // function askMenow(){
 //     motification=new Notification("HELLO",{body:"Im dying"});
 //     motification.onclick = function(event) {
