@@ -49,10 +49,8 @@ function askMe()
                             var notif_display=new Date();
                             notif_display.setMinutes( notif_display.getMinutes() + 15 );
                             console.log(notif_display);
-                            event.showNotification('Next One will come in 15');
-                            // var notif=event.showNotification('Assigment 5 Submission',{body:"",showTrigger:new TimestampTrigger(notif_display)});
-                            // event.onclick=console.log("hello")
-
+                            event.showNotification('Next One will come in 15',{timestamp:notif_display.getMilliseconds()});                          
+                            // var notif=event.showNotification('Assigment 5 Submission',{body:"",});
                         })
                         
                         
