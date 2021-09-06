@@ -23,7 +23,7 @@
 </head>
 <body>
   <form id="signup">
-    <button type="button" class="but1" onclick="askUs()">Allow Notifcation </button>
+    <button type="button" onclick="askUs()">Allow Notifcation </button>
     <input type="hidden" id="key" name="entry.1235028277">
     <br><p>Which is your Divsion</p><br>
     <input type="radio" id="adiv" name="entry.1294479133" value="A" required>
@@ -33,7 +33,6 @@
     <br><br>
     <button type="submit" id="Sub">Start the process</button>
   </form>
-
     <script>
   const messaging=app.messaging();
 navigator.serviceWorker.register("../firebase-messaging-sw.js",{scope:"../"}).then(reg=>{
@@ -81,6 +80,7 @@ function sendtheToken(para){
   var x=document.getElementById("key")
   x.value=para;
   console.log(x);
+localStorage.setItem("token",x.value);
 }
 $("#signup").submit(function(event){
 event.preventDefault();

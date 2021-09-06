@@ -1,9 +1,8 @@
 curl -X POST -H "Authorization: key=AAAApxo_dYg:APA91bHEtQt7OglNfL1Ri4MJFqQfdc415lyuclOX-CsASn_b0_3rqY76f8ld9ibIf-MYIHE-t7l4awh3s1nUf9riYdtZcqiu_YafQrlVgH4adsv5X2vL26y8Vp8hmdZwsKvPhjSjxxtz" -H "Content-Type: application/json" -d '{
   "notification": {
-    "title": "Portugal vs. Denmark",
-    "body": "5 to 1",
-    "icon": "firebase-logo.png",
-    "click_action": "http://localhost:8081"
+    "title": "Click to join the meeting ",
+    "body": "Its very real",
+    "click_action": "https://meet.google.com/mhb-guia-czw"
   },
-  "to": "fMFEfv6K8BY:APA91bGbzuK28vN_6CLH0E6At4blJolg6ejDEep4_dTGd_IBSmPqretd7p0qwhAxZgkp3QEfye_Tgtifhfv2IBQJlSFWhH7efeZPRXamBK1-sCGsug-OwFKeckGkPqrfzX6t035VNPgh"
+  "to": "cLrUCzwcbuAVD5dEocx1m7:APA91bGCvsFIlNaZydtui5nkL9w2UAAP7EWYyjAbEDlHwL4DG3iseKJowUWe5u8TbfuhA_a_j6U2VD8atgYdRgMikXn8dh6TSHACuxpC2FGQNtza6TCuO5XzyVdlo4QoPG2jP2subvDf"
 }' "https://fcm.googleapis.com/fcm/send"
