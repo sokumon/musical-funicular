@@ -1,4 +1,4 @@
-importScripts("https://www.gstatic.com/firebasejs/4.9.1/firebase.js");
+importScripts("https://www.gstatic.com/firebasejs/7.0.0/firebase.js");
 const firebaseConfig = {
     apiKey: "AIzaSyB0XYkzNTnwa8qry5JiuG-15_-9BC46WVo",
     authDomain: "push-notifications-101-4ab49.firebaseapp.com",
@@ -9,7 +9,6 @@ const firebaseConfig = {
   };
  const app= firebase.initializeApp(firebaseConfig);
 const messaging=app.messaging();
-self.addEventListener('push',function(payload){
-    console.log("hahahahh it is here ")
-    console.log(payload);
+self.addEventListener('push',function(){
+    self.showNotification("HELLO ANWESHA",{body:"Hi"});
 })

@@ -3,23 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="manifest" href="manifest.json">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Firebase</title>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-messaging.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script>
+              const firebaseConfig = {
+    apiKey: "AIzaSyB0XYkzNTnwa8qry5JiuG-15_-9BC46WVo",
+    authDomain: "push-notifications-101-4ab49.firebaseapp.com",
+    projectId: "push-notifications-101-4ab49",
+    storageBucket: "push-notifications-101-4ab49.appspot.com",
+    messagingSenderId: "717699904904",
+    appId: "1:717699904904:web:4c6496276327474de0763d"
+  };
+ const app= firebase.initializeApp(firebaseConfig);
+        </script>
 </head>
 <body>
-    <p>Aastha here</p>
-    <button onclick="askMe()">allow the notificatins</button>
-    <div  id="Status"></div>
-    <h2 id="instruct"></h2>
-    <div id="subject"></div>
-    <div id="work"></div>
-    <div id="number"></div>
-    <script src="test.js"></script>
-    <style>
-#subject{
-    font-size: 100px;
-    color: red;
+  <form id="signup">
+    <button type="button" onclick="askUs()">Allow Notifcation </button>
+    <input type="hidden" id="key" name="entry.1235028277">
+    <br><p>Which is your Divsion</p><br>
+    <input type="radio" id="adiv" name="entry.1294479133" value="A" required>
+    <label for="adiv">A</A><br>
+    <input type="radio" id="bdiv" name="entry.1294479133" value="B" required>
+    <label for="bdiv">B</label><br>
+    <br><br>
+    <button type="submit" id="Sub">Start the process</button>
+  </form>
+    <script>
+  const messaging=app.messaging();
+navigator.serviceWorker.register("../firebase-messaging-sw.js",{scope:"../"}).then(reg=>{
+  console.log("done");
+}).catch(err=>{
+  console.log(err);
+})
+function askUs(e){
+    messaging.requestPermission().then(function(){
+      console.log("hello");
+      if(isTokenSentToServer()) {
+	  	console.log('Token already saved.');
+      document.getElementById("Sub").disabled=true;
+      console.log(document.getElementById("Sub").disabled);
+	  } else {
+	  	getRegToken();
+	  }
+  });
 }
-    </style>
+  function setTokenSentToServer(sent) {
+	    window.localStorage.setItem('sentToServer', sent ? 1 : 0);
+}
+function isTokenSentToServer() {
+	    return window.localStorage.getItem('sentToServer') == 1;
+}
+function getRegToken(argument) {
+		messaging.getToken({vapidKey: 'BA3_yNBVrf2v-tFsVWzULfmL99l8PdVsbrOyWX091vCsrwLZ_04sPUQe4206QCauYhbSWMdyzzUZxgp44IAGk1Y'})
+		  .then(function(currentToken) {
+            console.log()
+		    if (currentToken) {
+          sendtheToken(currentToken);
+		      // console.log(currentToken);
+		      setTokenSentToServer(true);
+		    } else {
+		      console.log('No Instance ID token available. Request permission to generate one.');
+		      setTokenSentToServer(false);
+		    }
+		  })
+		  .catch(function(err) {
+		    console.log('An error occurred while retrieving token. ', err.message);
+		    setTokenSentToServer(false);
+		  });
+	}
+function sendtheToken(para){
+  var x=document.getElementById("key")
+  x.value=para;
+  console.log(x);
+localStorage.setItem("token",x.value);
+}
+$("#signup").submit(function(event){
+event.preventDefault();
+$.ajax({
+  url:"https://docs.google.com/forms/d/e/1FAIpQLSfu5sc6FFpIiek82QtChQAAt8dLyp4GBwidXDaM2giCwe8sZw/formResponse",
+  data:$("#signup").serialize(),
+  type:'POST',
+  dataType:'json'
+})
+});
+messaging.onTokenRefresh(function() {
+  messaging.getToken()
+  .then(function(refreshedToken) {
+    console.log('Token refreshed.');
+    // Indicate that the new Instance ID token has not yet been sent to the
+    // app server.
+    setTokenSentToServer(false);
+    // Send Instance ID token to app server.
+    sendTokenToServer(refreshedToken);
+    // ...
+  })
+  .catch(function(err) {
+    console.log('Unable to retrieve refreshed token ', err);
+    showToken('Unable to retrieve refreshed token ', err);
+  });
+});
+    </script>
 </body>
 </html>
