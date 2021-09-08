@@ -1,18 +1,9 @@
 <?php
-	define('SERVER_API_KEY', 'YOUR SERVER KEY');
+if($_SERVER["REQUEST_METHOD"]=="POST")
+{	define('SERVER_API_KEY', 'AAAApxo_dYg:APA91bHEtQt7OglNfL1Ri4MJFqQfdc415lyuclOX-CsASn_b0_3rqY76f8ld9ibIf-MYIHE-t7l4awh3s1nUf9riYdtZcqiu_YafQrlVgH4adsv5X2vL26y8Vp8hmdZwsKvPhjSjxxtz');
 
-	require 'DbConnect.php';
-	$db = new DbConnect;
-	$conn = $db->connect();
-	$stmt = $conn->prepare('SELECT * FROM tokens');
-	$stmt->execute();
-	$tokens = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	$tokens =["c9uQXR04mMQnIgz0yi02HG:APA91bFfg75HDThSwqsiuWENyyg4LXS4ES9C3t6xsxd9hcOhMZ2PzyQSLyBxROGZGQTfJtHAjmXvGXwrQBjnTnP6IR4cK1QEQ4oY0SixJvjhsze2kp7-i1waB9-bGL-uIjSrbD-FIhlK"];
 
-	foreach ($tokens as $token) {
-		$registrationIds[] = $token['token'];
-	}
-
-	// $tokens = ['cCLA1_8Inic:APA91bGhuCksjWEETYWVOh04scsZInxdWmXekEr5F9-1zJuTDZDw3It_tNmpA__PmoxDTISZzplD_ciXvsuw2pMtYSzdfIUAUfcTLnghvJS0CVkYW9sVx2HnF1rqnxsFgSdYmcXpHKLs'];
 	
 	$header = [
 		'Authorization: Key=' . SERVER_API_KEY,
@@ -20,15 +11,14 @@
 	];
 	
 	$msg = [
-		'title' => 'Testing Notification',
+		'title' => 'Testing Notification from push.php',
 		'body' => 'Testing Notification from localhost',
-		'icon' => 'img/icon.png',
-		'image' => 'img/d.png',
+		'click_action'=>'https://open.spotify.com/track/5HCyWlXZPP0y6Gqq8TgA20?si=45c9d5cf8e474dde'
 	];
 
 	$payload = [
-		'registration_ids' 	=> $registrationIds,
-		'data'				=> $msg
+		'registration_ids' 	=> $tokens,
+		'notification'				=> $msg
 	];
 
 	$curl = curl_init();
@@ -41,8 +31,9 @@
 	  CURLOPT_HTTPHEADER => $header
 	));
 
-	// $response = curl_exec($curl);
+	$response = curl_exec($curl);
 	$err = curl_error($curl);
-
-	curl_close($curl);
+	print_r($response);
+	print_r($err);
+	curl_close($curl);}
 ?>
