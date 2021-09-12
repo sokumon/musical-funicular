@@ -22,7 +22,7 @@
         </script>
 </head>
 <body>
-  <form id="signup">
+  <form id="signup" action="" method="POST">
     <button type="button" onclick="askUs()">Allow Notifcation </button>
     <input type="hidden" id="key" name="entry.1235028277">
     <br><p>Which is your Divsion</p><br>
@@ -35,7 +35,7 @@
   </form>
     <script>
   const messaging=app.messaging();
-navigator.serviceWorker.register("../firebase-messaging-sw.js",{scope:"../"}).then(reg=>{
+navigator.serviceWorker.register("/firebase-messaging-sw.js").then(reg=>{
   console.log("done");
 }).catch(err=>{
   console.log(err);

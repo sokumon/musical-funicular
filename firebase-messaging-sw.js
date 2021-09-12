@@ -9,6 +9,20 @@ const firebaseConfig = {
   };
  const app= firebase.initializeApp(firebaseConfig);
 const messaging=app.messaging();
-self.addEventListener('push',function(){
-    self.showNotification("HELLO ANWESHA",{body:"Hi"});
-})
+function sendToPhp()
+{fetch("http://localhost/trial/notifiication/push.php", {
+    method: "POST",
+    mode: "same-origin",
+    credentials: "same-origin",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      "payload": 123456
+    })
+  }).then(res=>{
+      console.log(res.status)
+  }
+
+  )
+}

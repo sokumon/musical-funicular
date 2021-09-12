@@ -1,8 +1,8 @@
 curl -X POST -H "Authorization: key=AAAApxo_dYg:APA91bHEtQt7OglNfL1Ri4MJFqQfdc415lyuclOX-CsASn_b0_3rqY76f8ld9ibIf-MYIHE-t7l4awh3s1nUf9riYdtZcqiu_YafQrlVgH4adsv5X2vL26y8Vp8hmdZwsKvPhjSjxxtz" -H "Content-Type: application/json" -d '{
   "notification": {
-    "title": "Testing the from Git Bash",
-    "body": "Yeah",
+    "title": "Hello Aastha",
+    "body": "Do the assignment",
     "click_action": ""
   },
-  "to": "c9uQXR04mMQnIgz0yi02HG:APA91bFfg75HDThSwqsiuWENyyg4LXS4ES9C3t6xsxd9hcOhMZ2PzyQSLyBxROGZGQTfJtHAjmXvGXwrQBjnTnP6IR4cK1QEQ4oY0SixJvjhsze2kp7-i1waB9-bGL-uIjSrbD-FIhlK"
+  "to": "cbF9BI_QHvPs__EM2Bs87q:APA91bFJic2h_7187OH_SaPQyR1WATYED-_PiI2lI-cY44UqUmYdxvo7dxLPCB7wQqRAOBYH9tjvqxjnocYxapFAXbYbiDy3GDSr0VmoUd6kYlbKXwOSRehvnzjJFCqZcM7ArmCrypn_"
 }' "https://fcm.googleapis.com/fcm/send"

@@ -1,6 +1,5 @@
 <?php
-if($_SERVER["REQUEST_METHOD"]=="POST")
-{	define('SERVER_API_KEY', 'AAAApxo_dYg:APA91bHEtQt7OglNfL1Ri4MJFqQfdc415lyuclOX-CsASn_b0_3rqY76f8ld9ibIf-MYIHE-t7l4awh3s1nUf9riYdtZcqiu_YafQrlVgH4adsv5X2vL26y8Vp8hmdZwsKvPhjSjxxtz');
+define('SERVER_API_KEY', 'AAAApxo_dYg:APA91bHEtQt7OglNfL1Ri4MJFqQfdc415lyuclOX-CsASn_b0_3rqY76f8ld9ibIf-MYIHE-t7l4awh3s1nUf9riYdtZcqiu_YafQrlVgH4adsv5X2vL26y8Vp8hmdZwsKvPhjSjxxtz');
 
 	$tokens =["c9uQXR04mMQnIgz0yi02HG:APA91bFfg75HDThSwqsiuWENyyg4LXS4ES9C3t6xsxd9hcOhMZ2PzyQSLyBxROGZGQTfJtHAjmXvGXwrQBjnTnP6IR4cK1QEQ4oY0SixJvjhsze2kp7-i1waB9-bGL-uIjSrbD-FIhlK"];
 
@@ -31,9 +30,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 	  CURLOPT_HTTPHEADER => $header
 	));
 
-	$response = curl_exec($curl);
-	$err = curl_error($curl);
-	print_r($response);
-	print_r($err);
-	curl_close($curl);}
+	// $response = curl_exec($curl);
+	// $err = curl_error($curl);
+	// print_r($response);
+	// print_r($err);
+	curl_close($curl);
+	echo "hello "+file_get_contents("php://input");
 ?>
