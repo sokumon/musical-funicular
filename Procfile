@@ -1,1 +1,1 @@
-worker:php call.php
+worker:php bin/call.php
