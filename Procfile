@@ -1,1 +1,1 @@
-worker: php bin/call.php
+worker:node server.js
