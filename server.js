@@ -7,4 +7,4 @@ function getData(){
     });
   })
 }
-setInterval(getData(),1000);
+setInterval(getData(),30000);

@@ -1,1 +1,1 @@
-worker: php call.php
+worker:node server.js
