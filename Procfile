@@ -1,1 +1,1 @@
-worker:php call.php
+worker: cd ~/www/ && ~/php/bin/php worker.php
