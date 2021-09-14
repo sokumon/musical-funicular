@@ -9,10 +9,8 @@ curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 $headers = array();
 $headers[] = 'Content-Type: application/json';
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-while(curl_errno($ch)){
 $result = json_decode(curl_exec($ch));
 echo $result->number;
-}
 // if () {
 //     echo 'Error:' . curl_error($ch);
 // }
