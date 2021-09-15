@@ -13,6 +13,7 @@ $headers[] = 'Content-Type: application/json';
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 $result = json_decode(curl_exec($ch));
 echo $result->number;
+
 // if () {
 //     echo 'Error:' . curl_error($ch);
 // }
