@@ -2,11 +2,10 @@
 	$decoded;
 		$content = trim(file_get_contents("php://input"));
 		$decoded = json_decode($content);
-		echo $decoded->payload;
+		print_r($decoded);
 	define('SERVER_API_KEY', 'AAAApxo_dYg:APA91bHEtQt7OglNfL1Ri4MJFqQfdc415lyuclOX-CsASn_b0_3rqY76f8ld9ibIf-MYIHE-t7l4awh3s1nUf9riYdtZcqiu_YafQrlVgH4adsv5X2vL26y8Vp8hmdZwsKvPhjSjxxtz');
 
-	$tokens =[$decoded->payload];
-
+	$tokens =[$decoded];
 	
 	$header = [
 		'Authorization: Key=' . SERVER_API_KEY,
@@ -33,9 +32,9 @@
 	  CURLOPT_POSTFIELDS => json_encode( $payload ),
 	  CURLOPT_HTTPHEADER => $header
 	));
-	$response = curl_exec($curl);
-	$err = curl_error($curl);
-	print_r($response);
-	print_r($err);
+	// $response = curl_exec($curl);
+	// $err = curl_error($curl);
+	// print_r($response);
+	// print_r($err);
 	curl_close($curl);
 ?>

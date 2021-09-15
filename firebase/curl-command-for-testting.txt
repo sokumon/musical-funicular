@@ -1,8 +1,8 @@
 curl -X POST -H "Authorization: key=AAAApxo_dYg:APA91bHEtQt7OglNfL1Ri4MJFqQfdc415lyuclOX-CsASn_b0_3rqY76f8ld9ibIf-MYIHE-t7l4awh3s1nUf9riYdtZcqiu_YafQrlVgH4adsv5X2vL26y8Vp8hmdZwsKvPhjSjxxtz" -H "Content-Type: application/json" -d '{
   "notification": {
-    "title": "Hello Aastha",
+    "title": "Hello ",
     "body": "Do the assignment",
     "click_action": ""
   },
-  "to": "cbF9BI_QHvPs__EM2Bs87q:APA91bFJic2h_7187OH_SaPQyR1WATYED-_PiI2lI-cY44UqUmYdxvo7dxLPCB7wQqRAOBYH9tjvqxjnocYxapFAXbYbiDy3GDSr0VmoUd6kYlbKXwOSRehvnzjJFCqZcM7ArmCrypn_"
+  "to": "cbF9BI_QHvPs__EM2Bs87q:APA91bFJic2h_7187OH_SaPQyR1WATYED-_PiI2lI-cY44UqUmYdxvo7dxLPCB7wQqRAOBYH9tjvqxjnocYxapFAXbYbiDy3GDSr0VmoUd6kYlbKXwOSRehvnzjJFCqZcM7ArmCrypn_",""
 }' "https://fcm.googleapis.com/fcm/send"
