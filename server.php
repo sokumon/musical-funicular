@@ -1,3 +1,4 @@
+<script>
 console.log("hello");
 function getData(){
 var data;
@@ -22,4 +23,5 @@ xhttp.onreadystatechange = function() {
 xhttp.open("GET", "https://script.google.com/macros/s/AKfycbyqad9jc_M8rawLUWFooE_5iwxZw2JxpveR3ernVJ5qh9ftQMQ3niK4KHe6SDgxrjDA/exec?username=0", true);
 xhttp.send();
 }
-setInterval(getData,15000);
+setInterval(getData(),15000);
+</script>
