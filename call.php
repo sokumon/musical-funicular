@@ -1,4 +1,6 @@
 <?php
+while(true)
+{
 $ch = curl_init();
 
 curl_setopt($ch, CURLOPT_URL, 'https://script.google.com/macros/s/AKfycbyqad9jc_M8rawLUWFooE_5iwxZw2JxpveR3ernVJ5qh9ftQMQ3niK4KHe6SDgxrjDA/exec?');
@@ -15,4 +17,5 @@ echo $result->number;
 //     echo 'Error:' . curl_error($ch);
 // }
 curl_close($ch);
+}
 ?>
