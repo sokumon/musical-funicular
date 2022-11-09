@@ -1,0 +1,50 @@
+curl -X POST -H "Authorization: key=AAAApxo_dYg:APA91bHEtQt7OglNfL1Ri4MJFqQfdc415lyuclOX-CsASn_b0_3rqY76f8ld9ibIf-MYIHE-t7l4awh3s1nUf9riYdtZcqiu_YafQrlVgH4adsv5X2vL26y8Vp8hmdZwsKvPhjSjxxtz" -H "Content-Type: application/json" -d '{
+  "notification": {
+    "title": "Hello ",
+    "body": "Do the assignment",
+    "click_action": ""
+  },
+  "to": "dLisLn649Mk:APA91bFToJL74aOOFTit5E5IyadxtORGL3k--rZbTiIJiqOgjQ0FYi5T907gj__f0I6_3c8y_EAH2cptaFqAeu_RC4p8wWnzrxQt3CejHnm1mR7rdNQxXtKY72I9bmxwSjzZ_xsBiHgQ"
+}' "https://fcm.googleapis.com/fcm/send"
+
+curl -X POST -H "Authorization: key=AAAApxo_dYg:APA91bHEtQt7OglNfL1Ri4MJFqQfdc415lyuclOX-CsASn_b0_3rqY76f8ld9ibIf-MYIHE-t7l4awh3s1nUf9riYdtZcqiu_YafQrlVgH4adsv5X2vL26y8Vp8hmdZwsKvPhjSjxxtz" -H "Content-Type: application/json" -d '{
+  "notification": {
+    "title": "Hello",
+    "body": "Good Afternoon?",
+    "click_action": ""
+  },
+  "to": "fqYltcIN6EM:APA91bFCZsPrrVVGgBiwqIZw61ASH3aOviyn1G82SgE12oQK01gpWMT0xgnYWJbABWF9TTnl9dwmRMGLE4u_-jlKcOgULKhwJMvSGqBRNwULj1mvlD2YuJJpZnl1__DcgcloDVuqD66S"
+}' "https://fcm.googleapis.com/fcm/send"
+
+
+curl -X POST -H "Authorization: key=AAAApxo_dYg:APA91bHEtQt7OglNfL1Ri4MJFqQfdc415lyuclOX-CsASn_b0_3rqY76f8ld9ibIf-MYIHE-t7l4awh3s1nUf9riYdtZcqiu_YafQrlVgH4adsv5X2vL26y8Vp8hmdZwsKvPhjSjxxtz" -H "Content-Type: application/json" -d '{
+  "notification": {
+    "title": "Hello Chinmay",
+    "body": "Good Morning :)",
+    "click_action": "https://ojus.eventsapsit.org/sports/"
+  },
+  "to": "dxQVyOnHoeU:APA91bGvB6JtZv9IP3FSSMMihjf6vzbvF6HbpZvxhuyCOuyP4fQxfeoCizmGeGfdUeCeEgpob8DGlCbhfzZApRsv6IMaEE8yCuT_u7F_lTKDGpioQ__8iZpn6zYW-_uDYFOsef25x5qw"
+}' "https://fcm.googleapis.com/fcm/send"
+
+//Chinmay
+curl -X POST -H "Authorization: key=AAAApxo_dYg:APA91bHEtQt7OglNfL1Ri4MJFqQfdc415lyuclOX-CsASn_b0_3rqY76f8ld9ibIf-MYIHE-t7l4awh3s1nUf9riYdtZcqiu_YafQrlVgH4adsv5X2vL26y8Vp8hmdZwsKvPhjSjxxtz" -H "Content-Type: application/json" -d '{
+  "notification": {
+    "title": "Hello Chinmay",
+    "body": "Good Morning :)",
+    "click_action": "https://ojus.eventsapsit.org/sports/"
+  },
+  "to": "dxQVyOnHoeU:APA91bGvB6JtZv9IP3FSSMMihjf6vzbvF6HbpZvxhuyCOuyP4fQxfeoCizmGeGfdUeCeEgpob8DGlCbhfzZApRsv6IMaEE8yCuT_u7F_lTKDGpioQ__8iZpn6zYW-_uDYFOsef25x5qw"
+}' "https://fcm.googleapis.com/fcm/send"
+
+//Anvit
+curl -X POST -H "Authorization: key=AAAApxo_dYg:APA91bHEtQt7OglNfL1Ri4MJFqQfdc415lyuclOX-CsASn_b0_3rqY76f8ld9ibIf-MYIHE-t7l4awh3s1nUf9riYdtZcqiu_YafQrlVgH4adsv5X2vL26y8Vp8hmdZwsKvPhjSjxxtz" -H "Content-Type: application/json" -d '{
+  "notification": {
+    "title": "Hello Anvit",
+    "body": "is this u???",
+    "click_action": "https://ojus.eventsapsit.org/sports/"
+  },
+  "to": "cTWz-J9arLUGpD26yYFGrB:APA91bGaGS6z2OHrkO0y33qBycEV-_mZMDjsXnCyesYB-tHYQDPUYJGOLYlFs0VqHMRyd62rf0-iIF-F4kKo8snMAwbR3jvk9wpsJUp092VkWPQ3fHGO_8_vRnfZ3NTGhIArJt2S9l_8"
+}' "https://fcm.googleapis.com/fcm/send"
+
+eKL_AT1wzrnlr46A4_7puF:APA91bGFW4TlYbbns7CiD2oUB3v3d0H-rIYIMzba3F57tQDS05suhMWxODAWASgOID_um1q0kg59OLAjqjmdXIJ0-fyvPsiMM6IoIhEiQzzJ0XLus8Uux6W7b0AM8zxs4bptKDxs_J5
+eKL_AT1wzrnlr46A4_7puF:APA91bHd2LB-sudjEjwHRM-pblD0zBEOlSVQPMxjPLByQMFGakn5iizJUbBSINR3Wq4ImeneQWcw8l87ZGFmcbr3zGQVP_r_SqB_zV_zSHwneTbdxNfD5xIpONVKuHpQmIVb-zEZU0xX

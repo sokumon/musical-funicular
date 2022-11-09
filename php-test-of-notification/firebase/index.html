@@ -6,8 +6,8 @@
     <link rel="manifest" href="manifest.json">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Firebase</title>
-        <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-messaging.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-messaging.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
         <script>
               const firebaseConfig = {
@@ -25,7 +25,7 @@
   <form id="signup">
     <button type="button" class="but1" onclick="askUs()">Allow Notifcation </button>
     <input type="hidden" id="key" name="entry.1235028277">
-    <br><p>Which is your Divsion</p><br>
+    <br><p></p><br>
     <input type="radio" id="adiv" name="entry.1294479133" value="A" required>
     <label for="adiv">A</A><br>
     <input type="radio" id="bdiv" name="entry.1294479133" value="B" required>
@@ -62,9 +62,17 @@ function isTokenSentToServer() {
 function getRegToken(argument) {
 		messaging.getToken({vapidKey: 'BA3_yNBVrf2v-tFsVWzULfmL99l8PdVsbrOyWX091vCsrwLZ_04sPUQe4206QCauYhbSWMdyzzUZxgp44IAGk1Y'})
 		  .then(function(currentToken) {
-            console.log()
 		    if (currentToken) {
           sendtheToken(currentToken);
+          messaging.subscribeToTopic(currentToken, topic)
+          .then((response) => {
+    // See the MessagingTopicManagementResponse reference documentation
+    // for the contents of response.
+          console.log('Successfully subscribed to topic:', response);
+        })
+  .catch((error) => {
+    console.log('Error subscribing to topic:', error);
+  });
 		      // console.log(currentToken);
 		      setTokenSentToServer(true);
 		    } else {
@@ -91,22 +99,22 @@ $.ajax({
   dataType:'json'
 })
 });
-messaging.onTokenRefresh(function() {
-  messaging.getToken()
-  .then(function(refreshedToken) {
-    console.log('Token refreshed.');
-    // Indicate that the new Instance ID token has not yet been sent to the
-    // app server.
-    setTokenSentToServer(false);
-    // Send Instance ID token to app server.
-    sendTokenToServer(refreshedToken);
-    // ...
-  })
-  .catch(function(err) {
-    console.log('Unable to retrieve refreshed token ', err);
-    showToken('Unable to retrieve refreshed token ', err);
-  });
-});
+// messaging.onTokenRefresh(function() {
+//   messaging.getToken()
+//   .then(function(refreshedToken) {
+//     console.log('Token refreshed.');
+//     // Indicate that the new Instance ID token has not yet been sent to the
+//     // app server.
+//     setTokenSentToServer(false);
+//     // Send Instance ID token to app server.
+//     sendTokenToServer(refreshedToken);
+//     // ...
+//   })
+//   .catch(function(err) {
+//     console.log('Unable to retrieve refreshed token ', err);
+//     showToken('Unable to retrieve refreshed token ', err);
+//   });
+// });
     </script>
 </body>
 </html>
